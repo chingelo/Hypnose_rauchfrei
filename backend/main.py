@@ -140,6 +140,22 @@ PHASE4_NODE_EXPECTATION_HINTS: dict[str, str] = {
     "known_question": "Antwortoptionen: ja oder nein.",
 }
 
+PHASE4_SIDE_QUESTION_TRIGGER_PHRASES: tuple[str, ...] = (
+    "ich habe eine frage",
+    "ich hab eine frage",
+    "ich haette eine frage",
+    "ich hab da eine frage",
+    "darf ich eine frage",
+    "kann ich was fragen",
+    "kannst du mir das erklaeren",
+    "kannst du das erklaeren",
+    "was meinst du",
+    "ich verstehe nicht",
+    "verstehe ich nicht",
+    "das verstehe ich nicht",
+    "ich bin unsicher",
+)
+
 PAUSE_PRESETS_MS = {
     "kurz": 320,
     "mittel": 700,
@@ -357,6 +373,97 @@ def _phase4_hypnose_status_question(round_index: int) -> str:
     return variants[min(round_index, len(variants) - 1)]
 
 
+def _is_phase4_side_question_intent(value: str) -> bool:
+    raw = str(value or "").strip()
+    text = _normalize_text(raw)
+    if not text:
+        return False
+    if any(phrase in text for phrase in PHASE4_SIDE_QUESTION_TRIGGER_PHRASES):
+        return True
+    if raw.endswith("?"):
+        question_starts = (
+            "was ",
+            "wie ",
+            "warum ",
+            "wieso ",
+            "weshalb ",
+            "kann ",
+            "kannst ",
+            "darf ",
+            "soll ",
+            "ist ",
+            "sind ",
+        )
+        if text.startswith(question_starts):
+            return True
+    return False
+
+
+def _phase4_current_question_for_node(node: str, state: dict[str, object]) -> str:
+    if node == "activation_ready":
+        return _phase4_prompt("phase4_activation_ready_question")
+    if node == "activation_not_ready_followup":
+        return _phase4_prompt("phase4_activation_not_ready_followup")
+    if node == "first_cig_confirm":
+        return _phase4_prompt("phase4_activation_first_cigarette_confirm")
+    if node == "entry_light":
+        return _phase4_prompt("entry_perception_light")
+    if node == "hell_bright_followup":
+        return _phase4_prompt("hell_bright_followup")
+    if node == "hell_feel":
+        return _phase4_prompt("hell_feel_question")
+    if node in {"hell_hypnose_pause", "hell_hypnose_followup"}:
+        round_index = int(state.get("hell_hypnose_round") or 0)
+        return _phase4_hypnose_status_question(round_index)
+    if node == "hell_regulation_check":
+        return _phase4_prompt("hell_unpleasant_regulation_check")
+    if node == "dark_known":
+        return _phase4_prompt("dark_known_or_new_question")
+    if node == "known_question":
+        return _phase4_prompt("phase4_known_question")
+    if node == "origin_age":
+        return _phase4_prompt("dark_origin_age_question")
+    return _phase4_prompt("phase4_activation_ready_question")
+
+
+def _phase4_model_side_question_reply(
+    *,
+    node: str,
+    user_message: str,
+    current_question: str,
+) -> str:
+    system_text = (
+        "Du bist eine ruhige, empathische Hypnose-Begleiterin in Phase 4. "
+        "Der Nutzer macht eine Zwischenfrage oder signalisiert Unklarheit. "
+        "Beantworte diese Zwischenfrage kurz und klar auf Deutsch. "
+        "Wenn die Nachricht nur eine Ankuendigung ist (z.B. 'ich habe eine Frage'), "
+        "bitte den Nutzer in einem kurzen Satz, die konkrete Frage zu stellen. "
+        "Fuehre den Flow dabei nicht weiter."
+    )
+    user_text = (
+        f"Aktueller Knoten: {node}\n"
+        f"Nutzernachricht: {user_message}\n"
+        f"Aktuelle Flow-Frage (nur Kontext): {current_question}\n"
+        "Antworte in maximal zwei kurzen Saetzen."
+    )
+    completion = _resolve_openai_client().chat.completions.create(
+        model=_resolve_model_id(),
+        messages=[
+            {"role": "system", "content": system_text},
+            {"role": "user", "content": user_text},
+        ],
+        temperature=0.2,
+    )
+    return _extract_reply_text(completion).strip()
+
+
+def _phase4_local_side_question_reply() -> str:
+    return (
+        "Ja, gerne. Stell deine Frage bitte kurz und konkret, "
+        "dann beantworte ich sie dir direkt."
+    )
+
+
 def _build_phase4_reply(parts: list[str]) -> str:
     return "\n\n".join(part.strip() for part in parts if str(part or "").strip())
 
@@ -445,6 +552,34 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
         active = True
         reply = ""
         clarifier_fallback_question: str | None = None
+
+        if _is_phase4_side_question_intent(message):
+            current_question = _phase4_current_question_for_node(node, state)
+            side_reply = ""
+            try:
+                side_reply = _phase4_model_side_question_reply(
+                    node=node,
+                    user_message=message,
+                    current_question=current_question,
+                ).strip()
+            except Exception:
+                side_reply = ""
+            if not side_reply:
+                side_reply = _phase4_local_side_question_reply()
+            _session_history.setdefault(session_id, deque(maxlen=MAX_HISTORY_MESSAGES)).append(
+                {"role": "user", "content": message}
+            )
+            _session_history.setdefault(session_id, deque(maxlen=MAX_HISTORY_MESSAGES)).append(
+                {"role": "assistant", "content": side_reply}
+            )
+            _phase4_state[session_id] = state
+            return _phase4_build_response(
+                session_id=session_id,
+                reply=side_reply,
+                node=node,
+                awaits_user_input=True,
+                active=True,
+            )
 
         if node == "activation_ready":
             yes_no = _parse_yes_no(message)
