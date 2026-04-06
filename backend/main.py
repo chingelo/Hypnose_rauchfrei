@@ -133,6 +133,7 @@ PHASE4_NODE_EXPECTATION_HINTS: dict[str, str] = {
     "entry_light": "Antwortoptionen: eher hell, eher dunkel oder beides.",
     "hell_bright_followup": "Antwortoptionen: sehr hell oder noch etwas wahrnehmbar.",
     "hell_feel": "Antwortoptionen: eher angenehm oder eher unangenehm.",
+    "hell_hypnose_pause": "Antwortoptionen: es loest sich noch auf, du brauchst noch einen Moment, oder es ist bereits geloest.",
     "hell_hypnose_followup": "Antwortoptionen: es loest sich noch auf oder es ist bereits geloest.",
     "hell_regulation_check": "Antwortoptionen: eher hell, eher dunkel, beides oder ruhiger.",
     "dark_known": "Antwortoptionen: vertraut oder neu.",
@@ -300,6 +301,60 @@ def _classify_pleasant(value: str) -> str | None:
     if any(cue in text for cue in ("angenehm", "ruhig", "gut", "leicht", "warm")):
         return "pleasant"
     return None
+
+
+def _classify_hypnose_progress(value: str) -> str | None:
+    text = _normalize_text(value)
+    if not text:
+        return None
+
+    resolved_cues = (
+        "aufgeloest",
+        "geloest",
+        "bereits geloest",
+        "schon geloest",
+        "ist weg",
+        "weg",
+        "fertig",
+        "ruhig jetzt",
+    )
+    if any(cue in text for cue in resolved_cues):
+        return "resolved"
+
+    needs_more_cues = (
+        "loest sich",
+        "noch",
+        "moment",
+        "brauch",
+        "brauche",
+        "etwas zeit",
+        "nicht ganz",
+        "teilweise",
+        "weiter",
+        "am arbeiten",
+    )
+    if any(cue in text for cue in needs_more_cues):
+        return "needs_more"
+
+    yes_no = _parse_yes_no(value)
+    if yes_no is True:
+        # Im Kontext der Frage bedeutet ein schlichtes "ja" in der Regel:
+        # "ja, es loest sich noch auf".
+        return "needs_more"
+    if yes_no is False:
+        return "unclear"
+    return "unclear"
+
+
+def _phase4_hypnose_status_question(round_index: int) -> str:
+    variants = [
+        "Wie fuehlt es sich jetzt fuer dich an: loest es sich noch auf, brauchst du noch einen Moment, oder hat es sich bereits aufgeloest?",
+        "Pruef kurz in dich hinein: loest es sich weiter auf, brauchst du noch etwas Zeit, oder ist es schon aufgeloest?",
+        "Sag mir kurz den Stand: noch im Loesen, noch einen Moment noetig, oder bereits aufgeloest?",
+    ]
+    if round_index < 0:
+        round_index = 0
+    return variants[min(round_index, len(variants) - 1)]
 
 
 def _build_phase4_reply(parts: list[str]) -> str:
@@ -491,11 +546,12 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
         elif node == "hell_feel":
             pleasant = _classify_pleasant(message)
             if pleasant == "pleasant":
-                next_node = "hell_hypnose_followup"
+                next_node = "hell_hypnose_pause"
+                state["hell_hypnose_round"] = 0
                 reply = _build_phase4_reply(
                     [
                         _phase4_prompt("hell_hypnose_loch_notice"),
-                        _phase4_prompt("hell_hypnose_loch_open_followup"),
+                        "Bleib noch kurz dort und gib mir dann Bescheid, wie es sich gerade entwickelt.",
                     ]
                 )
             elif pleasant == "unpleasant":
@@ -510,13 +566,33 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                 reply = _phase4_prompt("hell_feel_question")
                 clarifier_fallback_question = reply
 
-        elif node == "hell_hypnose_followup":
-            resolved = any(
-                cue in normalized
-                for cue in ("geloest", "aufgeloest", "aufgeloest", "ruhig", "fertig", "besser", "ja")
-            )
-            if resolved:
+        elif node == "hell_hypnose_pause":
+            progress = _classify_hypnose_progress(message)
+            if progress == "resolved":
                 next_node = "dark_known"
+                state.pop("hell_hypnose_round", None)
+                reply = _build_phase4_reply(
+                    [
+                        _phase4_prompt("hell_post_resolved_continue"),
+                        _phase4_prompt("dark_known_or_new_question"),
+                    ]
+                )
+            elif progress == "needs_more":
+                next_node = "hell_hypnose_followup"
+                round_index = int(state.get("hell_hypnose_round") or 0)
+                reply = _phase4_hypnose_status_question(round_index)
+            else:
+                next_node = "hell_hypnose_followup"
+                round_index = int(state.get("hell_hypnose_round") or 0)
+                reply = _phase4_hypnose_status_question(round_index)
+                clarifier_fallback_question = reply
+
+        elif node == "hell_hypnose_followup":
+            progress = _classify_hypnose_progress(message)
+            round_index = int(state.get("hell_hypnose_round") or 0)
+            if progress == "resolved":
+                next_node = "dark_known"
+                state.pop("hell_hypnose_round", None)
                 reply = _build_phase4_reply(
                     [
                         _phase4_prompt("hell_post_resolved_continue"),
@@ -524,12 +600,16 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                     ]
                 )
             else:
+                round_index += 1
+                state["hell_hypnose_round"] = round_index
                 reply = _build_phase4_reply(
                     [
                         _phase4_prompt("hell_stay_extra_time"),
-                        _phase4_prompt("hell_hypnose_loch_open_followup"),
+                        _phase4_hypnose_status_question(round_index),
                     ]
                 )
+                if progress == "unclear":
+                    clarifier_fallback_question = _phase4_hypnose_status_question(round_index)
 
         elif node == "hell_regulation_choice":
             next_node = "hell_regulation_check"
