@@ -126,6 +126,19 @@ PHASE4_DEFAULT_PROMPTS: dict[str, str] = {
     "hell_stay_extra_time": "Nimm dir noch einen Moment Zeit und gib mir dann kurz Bescheid.",
 }
 
+PHASE4_NODE_EXPECTATION_HINTS: dict[str, str] = {
+    "activation_ready": "Antwortoptionen: ja oder nein.",
+    "activation_not_ready_followup": "Antwortoptionen: gar nichts mehr oder noch ein Rest ist vorhanden.",
+    "first_cig_confirm": "Antwortoptionen: ja oder nein.",
+    "entry_light": "Antwortoptionen: eher hell, eher dunkel oder beides.",
+    "hell_bright_followup": "Antwortoptionen: sehr hell oder noch etwas wahrnehmbar.",
+    "hell_feel": "Antwortoptionen: eher angenehm oder eher unangenehm.",
+    "hell_hypnose_followup": "Antwortoptionen: es loest sich noch auf oder es ist bereits geloest.",
+    "hell_regulation_check": "Antwortoptionen: eher hell, eher dunkel, beides oder ruhiger.",
+    "dark_known": "Antwortoptionen: vertraut oder neu.",
+    "known_question": "Antwortoptionen: ja oder nein.",
+}
+
 PAUSE_PRESETS_MS = {
     "kurz": 320,
     "mittel": 700,
@@ -311,6 +324,47 @@ def _phase4_build_response(
     )
 
 
+def _phase4_model_clarify_reply(
+    *,
+    node: str,
+    user_message: str,
+    fallback_question: str,
+) -> str:
+    expectation = PHASE4_NODE_EXPECTATION_HINTS.get(node, "")
+    system_text = (
+        "Du bist eine ruhige, empathische Hypnose-Begleiterin in Phase 4. "
+        "Der Nutzer hat auf eine Entscheidungsfrage unklar geantwortet. "
+        "Reagiere kurz, freundlich und klar. "
+        "Erklaere in maximal einem kurzen Satz, was du brauchst, "
+        "und stelle dann die Frage erneut mit klaren Antwortoptionen. "
+        "Keine neue Stufe starten, kein Themenwechsel, nur Deutsch."
+    )
+    user_text = (
+        f"Aktueller Knoten: {node}\n"
+        f"Nutzereingabe: {user_message}\n"
+        f"Ziel-Frage: {fallback_question}\n"
+        f"{expectation}\n"
+        "Form: genau zwei kurze Saetze."
+    )
+    completion = _resolve_openai_client().chat.completions.create(
+        model=_resolve_model_id(),
+        messages=[
+            {"role": "system", "content": system_text},
+            {"role": "user", "content": user_text},
+        ],
+        temperature=0.25,
+    )
+    reply = _extract_reply_text(completion).strip()
+    return reply
+
+
+def _phase4_local_clarify_reply(*, node: str, fallback_question: str) -> str:
+    expectation = (PHASE4_NODE_EXPECTATION_HINTS.get(node) or "").strip()
+    if not expectation:
+        return fallback_question
+    return f"Kein Problem, ich frage es kurz klarer. {fallback_question} {expectation}"
+
+
 def _phase4_initial_reply() -> str:
     return _build_phase4_reply(
         [
@@ -335,6 +389,7 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
         awaits_user_input = True
         active = True
         reply = ""
+        clarifier_fallback_question: str | None = None
 
         if node == "activation_ready":
             yes_no = _parse_yes_no(message)
@@ -352,6 +407,7 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                 reply = _phase4_prompt("phase4_activation_not_ready_followup")
             else:
                 reply = _phase4_prompt("phase4_activation_ready_question")
+                clarifier_fallback_question = reply
 
         elif node == "activation_not_ready_followup":
             no_signal = any(
@@ -394,8 +450,10 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                         _phase4_prompt("phase4_activation_first_cigarette_confirm"),
                     ]
                 )
+                clarifier_fallback_question = _phase4_prompt("phase4_activation_first_cigarette_confirm")
             else:
                 reply = _phase4_prompt("phase4_activation_first_cigarette_confirm")
+                clarifier_fallback_question = reply
 
         elif node == "entry_light":
             light = _classify_scene_light(message)
@@ -411,6 +469,7 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                 reply = _build_phase4_reply(parts)
             else:
                 reply = _phase4_prompt("entry_clarify_again")
+                clarifier_fallback_question = reply
 
         elif node == "hell_bright_followup":
             light = _classify_scene_light(message)
@@ -427,6 +486,7 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                 reply = _build_phase4_reply(parts)
             else:
                 reply = _phase4_prompt("hell_bright_followup")
+                clarifier_fallback_question = reply
 
         elif node == "hell_feel":
             pleasant = _classify_pleasant(message)
@@ -448,6 +508,7 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                 )
             else:
                 reply = _phase4_prompt("hell_feel_question")
+                clarifier_fallback_question = reply
 
         elif node == "hell_hypnose_followup":
             resolved = any(
@@ -488,6 +549,7 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                 reply = _build_phase4_reply(parts)
             else:
                 reply = _phase4_prompt("hell_unpleasant_regulation_check")
+                clarifier_fallback_question = reply
 
         elif node == "dark_known":
             known_state = _classify_known_or_new(message)
@@ -521,6 +583,7 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                 )
             else:
                 reply = _phase4_prompt("dark_known_or_new_retry")
+                clarifier_fallback_question = reply
 
         elif node == "known_question":
             yes_no = _parse_yes_no(message)
@@ -547,6 +610,7 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
                 reply = _phase4_prompt("dark_origin_age_question")
             else:
                 reply = _phase4_prompt("phase4_known_question")
+                clarifier_fallback_question = reply
 
         elif node == "origin_age":
             age = str(message or "").strip() or "[unklar]"
@@ -574,13 +638,42 @@ def _phase4_advance(session_id: str, message: str) -> ChatResponse:
         _session_history.setdefault(session_id, deque(maxlen=MAX_HISTORY_MESSAGES)).append(
             {"role": "user", "content": message}
         )
-        _session_history.setdefault(session_id, deque(maxlen=MAX_HISTORY_MESSAGES)).append(
-            {"role": "assistant", "content": reply}
+        needs_model_clarifier = bool(
+            clarifier_fallback_question
+            and awaits_user_input
+            and active
+            and next_node == node
         )
+        if not needs_model_clarifier:
+            _session_history.setdefault(session_id, deque(maxlen=MAX_HISTORY_MESSAGES)).append(
+                {"role": "assistant", "content": reply}
+            )
         if active:
             _phase4_state[session_id] = state
         else:
             _phase4_state.pop(session_id, None)
+
+    if needs_model_clarifier:
+        fallback_reply = _phase4_local_clarify_reply(
+            node=node,
+            fallback_question=clarifier_fallback_question or reply,
+        )
+        generated_reply = ""
+        try:
+            generated_reply = _phase4_model_clarify_reply(
+                node=node,
+                user_message=message,
+                fallback_question=clarifier_fallback_question or reply,
+            ).strip()
+        except Exception:
+            generated_reply = ""
+        if not generated_reply:
+            generated_reply = fallback_reply
+        reply = generated_reply
+        with _history_lock:
+            _session_history.setdefault(session_id, deque(maxlen=MAX_HISTORY_MESSAGES)).append(
+                {"role": "assistant", "content": reply}
+            )
 
     return _phase4_build_response(
         session_id=session_id,
