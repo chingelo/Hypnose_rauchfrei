@@ -1,0 +1,104 @@
+{
+  "profiles": {
+    "default": {
+      "speaking_rate": 0.9,
+      "lead_break_ms": 220,
+      "trail_break_ms": 260,
+      "newline_break_ms": 280,
+      "paragraph_break_ms": 720,
+      "sentence_break_ms": 150,
+      "comma_break_ms": 45,
+      "ellipsis_break_ms": 300
+    },
+    "questionnaire": {
+      "speaking_rate": 1.0,
+      "lead_break_ms": 140,
+      "trail_break_ms": 170,
+      "newline_break_ms": 220,
+      "paragraph_break_ms": 560,
+      "sentence_break_ms": 120,
+      "comma_break_ms": 30,
+      "ellipsis_break_ms": 220
+    },
+    "emdr": {
+      "speaking_rate": 0.84,
+      "lead_break_ms": 260,
+      "trail_break_ms": 300,
+      "newline_break_ms": 320,
+      "paragraph_break_ms": 900,
+      "sentence_break_ms": 180,
+      "comma_break_ms": 50,
+      "ellipsis_break_ms": 360
+    },
+    "session_default": {
+      "speaking_rate": 0.9,
+      "lead_break_ms": 420,
+      "trail_break_ms": 420,
+      "newline_break_ms": 420,
+      "paragraph_break_ms": 1200,
+      "sentence_break_ms": 240,
+      "comma_break_ms": 85,
+      "ellipsis_break_ms": 520
+    },
+    "session_phase_1": {
+      "speaking_rate": 0.9,
+      "lead_break_ms": 380,
+      "trail_break_ms": 360,
+      "newline_break_ms": 360,
+      "paragraph_break_ms": 980,
+      "sentence_break_ms": 220,
+      "comma_break_ms": 80,
+      "ellipsis_break_ms": 480
+    },
+    "session_phase_2": {
+      "speaking_rate": 0.9,
+      "lead_break_ms": 360,
+      "trail_break_ms": 360,
+      "newline_break_ms": 360,
+      "paragraph_break_ms": 980,
+      "sentence_break_ms": 220,
+      "comma_break_ms": 80,
+      "ellipsis_break_ms": 480
+    },
+    "session_phase_3": {
+      "speaking_rate": 0.9,
+      "lead_break_ms": 380,
+      "trail_break_ms": 380,
+      "newline_break_ms": 380,
+      "paragraph_break_ms": 1020,
+      "sentence_break_ms": 230,
+      "comma_break_ms": 85,
+      "ellipsis_break_ms": 500
+    },
+    "session_phase_4": {
+      "speaking_rate": 0.9,
+      "lead_break_ms": 430,
+      "trail_break_ms": 420,
+      "newline_break_ms": 420,
+      "paragraph_break_ms": 1200,
+      "sentence_break_ms": 250,
+      "comma_break_ms": 95,
+      "ellipsis_break_ms": 560
+    },
+    "session_phase_5": {
+      "speaking_rate": 0.9,
+      "lead_break_ms": 420,
+      "trail_break_ms": 420,
+      "newline_break_ms": 420,
+      "paragraph_break_ms": 1200,
+      "sentence_break_ms": 245,
+      "comma_break_ms": 90,
+      "ellipsis_break_ms": 540
+    },
+    "session_phase_6": {
+      "speaking_rate": 0.9,
+      "lead_break_ms": 390,
+      "trail_break_ms": 390,
+      "newline_break_ms": 390,
+      "paragraph_break_ms": 1050,
+      "sentence_break_ms": 230,
+      "comma_break_ms": 85,
+      "ellipsis_break_ms": 500
+    }
+  }
+}
