@@ -1,5 +1,6 @@
-﻿# Python
+# Python
 __pycache__/
+.pytest_cache/
 *.py[cod]
 *.pyo
 *.pyd
@@ -7,15 +8,19 @@ __pycache__/
 venv/
 env/
 backend/.venv/
+backend/.venv-router312/
+backend/runtime_state/
 
 # Env / secrets
 .env
 .env.*
 !.env.example
+backend/live_api_approval.json
 
 # Logs
 *.log
 logs/
+docs/
 
 # Flutter / Dart
 .flutter-plugins
@@ -44,3 +49,8 @@ Thumbs.db
 
 # Misc
 coverage/
+migration_reference/
+processed_voice/
+processed_voice_v2/
+2026-04-10 MixPad Projekt kopie.wav
+2026-04-10 MixPad Projekt kopie1.wav

@@ -1,0 +1,127 @@
+{
+  "version": 2,
+  "datasets": {
+    "routing": {
+      "v1_count": 403,
+      "edge_case_count_added": 25,
+      "duplicates_removed": 0,
+      "v2_count": 428,
+      "synthetic_marker_counts_v1": {
+        "placeholder_banane": 59,
+        "generic_repeat": 59,
+        "generic_question": 59,
+        "generic_support": 59,
+        "generic_abort": 59
+      },
+      "edge_labels": [
+        "dark_feeling_typo_pressure",
+        "dark_feeling_scale_only",
+        "dark_immediate_pressure_phrase",
+        "dark_perception_smell",
+        "dark_perception_audio_colloquial",
+        "dark_perception_visual_person",
+        "dark_mode_smell_only",
+        "dark_mode_audio_only",
+        "dark_mode_nothing_colloquial",
+        "scene_access_smell",
+        "scene_access_visual_dark",
+        "origin_owner_external_colloquial",
+        "origin_owner_internal_colloquial",
+        "origin_kind_person_brother",
+        "origin_kind_group_smoking_clique",
+        "origin_kind_other_smoke_smell",
+        "origin_kind_other_color",
+        "group_source_whole_colloquial",
+        "group_source_one_person_colloquial",
+        "group_source_multiple_colloquial",
+        "group_scope_representative_colloquial",
+        "group_scope_multiple_colloquial",
+        "group_core_real_explanation",
+        "group_core_incomplete_but_meaningful",
+        "person_switch_why_belonging"
+      ],
+      "top_node_counts_v2": [
+        [
+          "dark_scene_mode_clarify",
+          13
+        ],
+        [
+          "dark_scene_perception",
+          13
+        ],
+        [
+          "origin_other_target_kind",
+          12
+        ],
+        [
+          "group_source_kind",
+          11
+        ],
+        [
+          "scene_access_followup",
+          11
+        ],
+        [
+          "dark_scene_feeling_intensity",
+          9
+        ],
+        [
+          "group_whole_scope",
+          9
+        ],
+        [
+          "origin_cause_owner",
+          9
+        ],
+        [
+          "group_person_trigger_core",
+          8
+        ],
+        [
+          "hell_hypnose_wait",
+          8
+        ],
+        [
+          "hell_light_level",
+          8
+        ],
+        [
+          "hell_regulation_choice",
+          8
+        ],
+        [
+          "dark_known_branch",
+          7
+        ],
+        [
+          "dark_scene_immediate_feeling",
+          7
+        ],
+        [
+          "group_image_ready",
+          7
+        ]
+      ]
+    },
+    "slot_extraction": {
+      "v1_count": 59,
+      "edge_case_count_added": 25,
+      "duplicates_removed": 0,
+      "v2_count": 84,
+      "task_counts_v2": {
+        "focus_kind": 52,
+        "named_person_label": 20,
+        "display_trigger_focus_ref": 12
+      },
+      "helper_alignment_total": 25,
+      "helper_alignment_mismatches": 0,
+      "helper_alignment_examples": []
+    }
+  },
+  "split_counts": {
+    "routing_train_v2.jsonl": 355,
+    "routing_eval_v2.jsonl": 73,
+    "slot_extraction_train_v2.jsonl": 68,
+    "slot_extraction_eval_v2.jsonl": 16
+  }
+}

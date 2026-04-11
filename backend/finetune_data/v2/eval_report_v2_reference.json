@@ -1,0 +1,30 @@
+{
+  "provider": "reference",
+  "model": null,
+  "dataset_version": "v2",
+  "datasets": [
+    "routing",
+    "slot_extraction"
+  ],
+  "limit": null,
+  "metrics": [
+    {
+      "dataset": "routing",
+      "total": 73,
+      "json_parse_success": 73,
+      "schema_valid": 73,
+      "exact_match": 73,
+      "average_text_similarity": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "total": 16,
+      "json_parse_success": 16,
+      "schema_valid": 16,
+      "exact_match": 16,
+      "average_text_similarity": null
+    }
+  ],
+  "failure_count": 0,
+  "failures": []
+}

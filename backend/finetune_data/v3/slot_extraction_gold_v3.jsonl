@@ -1,0 +1,93 @@
+{"id": "slot-0001", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "peter"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0002", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "paul"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0003", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "mein vater"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0004", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "meine mutter"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0005", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der lehrer"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0006", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die lehrerin"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0007", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "mein chef"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0008", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "meine chefin"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0009", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "mein freund"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0010", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "meine freundin"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0011", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der arzt"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0012", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die therapeutin"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0013", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die menschen wo rauchen"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0014", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die clique auf dem pausenhof"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0015", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "meine freunde"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0016", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die gruppe vor der schule"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0017", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die klasse"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0018", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "alle anderen"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0019", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "mehrere jungs aus der klasse"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0020", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die leute in der raucherecke"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0021", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die kinder auf dem schulhof"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0022", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "meine familie"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0023", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die eltern"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0024", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "ein paar freundinnen"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0025", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der rauch"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0026", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der qualm"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0027", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der geruch"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0028", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die zigarette"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0029", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die situation auf dem schulhof"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0030", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "dieser moment"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0031", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "das lachen"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0032", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "das verhalten"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0033", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der blick"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0034", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die pause auf dem schulhof"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0035", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die raucherecke"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0036", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "das ereignis in der kueche"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0037", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die farbe rot"}, "output": {"focus_kind": "person"}}
+{"id": "slot-0038", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der geruch von rauch"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0039", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "peter"}, "output": {"named_person": "Peter"}}
+{"id": "slot-0040", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "paul"}, "output": {"named_person": "Paul"}}
+{"id": "slot-0041", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "das ist paul"}, "output": {"named_person": "Paul"}}
+{"id": "slot-0042", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "mein vater"}, "output": {"named_person": "Mein Vater"}}
+{"id": "slot-0043", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die lehrerin"}, "output": {"named_person": "Lehrerin"}}
+{"id": "slot-0044", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der chef"}, "output": {"named_person": "Chef"}}
+{"id": "slot-0045", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die menschen wo rauchen"}, "output": {"named_person": null}}
+{"id": "slot-0046", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die clique auf dem pausenhof"}, "output": {"named_person": null}}
+{"id": "slot-0047", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "meine freunde"}, "output": {"named_person": null}}
+{"id": "slot-0048", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der rauch"}, "output": {"named_person": null}}
+{"id": "slot-0049", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der geruch"}, "output": {"named_person": null}}
+{"id": "slot-0050", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die situation auf dem schulhof"}, "output": {"named_person": null}}
+{"id": "slot-0051", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "das lachen"}, "output": {"named_person": null}}
+{"id": "slot-0052", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die raucherecke"}, "output": {"named_person": null}}
+{"id": "slot-0053", "task": "display_trigger_focus_ref", "source": ["run_session_sandbox", "runtime_rendering"], "input": {"trigger_focus_ref": "die menschen wo rauchen"}, "output": {"display_trigger_focus_ref": "diese Gruppe"}}
+{"id": "slot-0054", "task": "display_trigger_focus_ref", "source": ["run_session_sandbox", "runtime_rendering"], "input": {"trigger_focus_ref": "die clique auf dem pausenhof"}, "output": {"display_trigger_focus_ref": "diese Gruppe"}}
+{"id": "slot-0055", "task": "display_trigger_focus_ref", "source": ["run_session_sandbox", "runtime_rendering"], "input": {"trigger_focus_ref": "ich glaube die freunde die dort am rauchen sind und mich auslachen"}, "output": {"display_trigger_focus_ref": "diese Gruppe"}}
+{"id": "slot-0056", "task": "display_trigger_focus_ref", "source": ["run_session_sandbox", "runtime_rendering"], "input": {"trigger_focus_ref": "ich glaube es sind die freunde"}, "output": {"display_trigger_focus_ref": "diese Gruppe"}}
+{"id": "slot-0057", "task": "display_trigger_focus_ref", "source": ["run_session_sandbox", "runtime_rendering"], "input": {"trigger_focus_ref": "die situation auf dem schulhof"}, "output": {"display_trigger_focus_ref": "die situation auf dem schulhof"}}
+{"id": "slot-0058", "task": "display_trigger_focus_ref", "source": ["run_session_sandbox", "runtime_rendering"], "input": {"trigger_focus_ref": "der rauch"}, "output": {"display_trigger_focus_ref": "der rauch"}}
+{"id": "slot-0059", "task": "display_trigger_focus_ref", "source": ["run_session_sandbox", "runtime_rendering"], "input": {"trigger_focus_ref": "Peter"}, "output": {"display_trigger_focus_ref": "Peter"}}
+{"id": "slot-v2-0001", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "mein bruder"}, "output": {"focus_kind": "person"}}
+{"id": "slot-v2-0002", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "meine oma"}, "output": {"focus_kind": "person"}}
+{"id": "slot-v2-0003", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "frau meier"}, "output": {"focus_kind": "person"}}
+{"id": "slot-v2-0004", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "der typ mit der zigarette"}, "output": {"focus_kind": "person"}}
+{"id": "slot-v2-0005", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "die anderen da hinten"}, "output": {"focus_kind": "group"}}
+{"id": "slot-v2-0006", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "ein haufen leute"}, "output": {"focus_kind": "group"}}
+{"id": "slot-v2-0007", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "die aus der raucherecke"}, "output": {"focus_kind": "group"}}
+{"id": "slot-v2-0008", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "alle am fenster"}, "output": {"focus_kind": "group"}}
+{"id": "slot-v2-0009", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "der gestank"}, "output": {"focus_kind": "other"}}
+{"id": "slot-v2-0010", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "das rot"}, "output": {"focus_kind": "other"}}
+{"id": "slot-v2-0011", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "die spannung im raum"}, "output": {"focus_kind": "other"}}
+{"id": "slot-v2-0012", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "rauchgeruch"}, "output": {"focus_kind": "other"}}
+{"id": "slot-v2-0013", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "ein komisches gefuehl"}, "output": {"focus_kind": "other"}}
+{"id": "slot-v2-0014", "task": "focus_kind", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "die farbe blau"}, "output": {"focus_kind": "other"}}
+{"id": "slot-v2-0015", "task": "named_person_label", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "mein bruder"}, "output": {"named_person": "Mein Bruder"}}
+{"id": "slot-v2-0016", "task": "named_person_label", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "meine oma"}, "output": {"named_person": "Meine Oma"}}
+{"id": "slot-v2-0017", "task": "named_person_label", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "frau meier"}, "output": {"named_person": "Frau Meier"}}
+{"id": "slot-v2-0018", "task": "named_person_label", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "die anderen da hinten"}, "output": {"named_person": null}}
+{"id": "slot-v2-0019", "task": "named_person_label", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "rauchgeruch"}, "output": {"named_person": null}}
+{"id": "slot-v2-0020", "task": "named_person_label", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"user_reply": "die farbe blau"}, "output": {"named_person": null}}
+{"id": "slot-v2-0021", "task": "display_trigger_focus_ref", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"trigger_focus_ref": "die anderen da hinten"}, "output": {"display_trigger_focus_ref": "diese Gruppe"}}
+{"id": "slot-v2-0022", "task": "display_trigger_focus_ref", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"trigger_focus_ref": "ein haufen leute"}, "output": {"display_trigger_focus_ref": "diese Gruppe"}}
+{"id": "slot-v2-0023", "task": "display_trigger_focus_ref", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"trigger_focus_ref": "die aus der raucherecke"}, "output": {"display_trigger_focus_ref": "diese Gruppe"}}
+{"id": "slot-v2-0024", "task": "display_trigger_focus_ref", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"trigger_focus_ref": "der gestank"}, "output": {"display_trigger_focus_ref": "der gestank"}}
+{"id": "slot-v2-0025", "task": "display_trigger_focus_ref", "source": ["gold_v2_edge_cases", "bug_history"], "input": {"trigger_focus_ref": "die farbe blau"}, "output": {"display_trigger_focus_ref": "die farbe blau"}}
+{"id": "slot-v3-0001", "task": "focus_kind", "source": ["gold_v3_edge_cases", "label_hardening"], "input": {"user_reply": "die clique"}, "output": {"focus_kind": "group"}}
+{"id": "slot-v3-0002", "task": "focus_kind", "source": ["gold_v3_edge_cases", "label_hardening"], "input": {"user_reply": "ich glaube es sind die freunde"}, "output": {"focus_kind": "group"}}
+{"id": "slot-v3-0004", "task": "focus_kind", "source": ["gold_v3_edge_cases", "label_hardening"], "input": {"user_reply": "das auslachen"}, "output": {"focus_kind": "other"}}
+{"id": "slot-v3-0005", "task": "focus_kind", "source": ["gold_v3_edge_cases", "label_hardening"], "input": {"user_reply": "der geruch nach rauch"}, "output": {"focus_kind": "other"}}
+{"id": "slot-v3-0008", "task": "named_person_label", "source": ["gold_v3_edge_cases", "label_hardening"], "input": {"user_reply": "mein chef"}, "output": {"named_person": "Mein Chef"}}
+{"id": "slot-v3-0009", "task": "named_person_label", "source": ["gold_v3_edge_cases", "label_hardening"], "input": {"user_reply": "die clique"}, "output": {"named_person": null}}
+{"id": "slot-v3-0010", "task": "display_trigger_focus_ref", "source": ["gold_v3_edge_cases", "label_hardening"], "input": {"trigger_focus_ref": "die clique"}, "output": {"display_trigger_focus_ref": "diese Gruppe"}}
+{"id": "slot-v3-0012", "task": "display_trigger_focus_ref", "source": ["gold_v3_edge_cases", "label_hardening"], "input": {"trigger_focus_ref": "peter"}, "output": {"display_trigger_focus_ref": "Peter"}}
+{"id": "slot-v3-0013", "task": "display_trigger_focus_ref", "source": ["gold_v3_edge_cases", "label_hardening"], "input": {"trigger_focus_ref": "der geruch nach rauch"}, "output": {"display_trigger_focus_ref": "der geruch nach rauch"}}

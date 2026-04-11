@@ -1,0 +1,262 @@
+{
+  "provider": "local_adapter",
+  "model": null,
+  "adapter_dir": "C:\\Projekte\\test_app\\backend\\finetune_data\\v3\\local_router_intent\\artifacts\\router_qlora_qwen25_3b_v3_intent",
+  "base_model": null,
+  "dataset_version": "v3",
+  "routing_mode": "intent_only",
+  "datasets": [
+    "routing",
+    "slot_extraction"
+  ],
+  "limit": null,
+  "metrics": [
+    {
+      "dataset": "routing",
+      "total": 81,
+      "json_parse_success": 81,
+      "schema_valid": 81,
+      "exact_match": 73,
+      "average_text_similarity": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "total": 18,
+      "json_parse_success": 18,
+      "schema_valid": 17,
+      "exact_match": 7,
+      "average_text_similarity": null
+    }
+  ],
+  "failure_count": 19,
+  "failures": [
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0024",
+      "raw_text": "{\"intent\": \"unclear\"}",
+      "parsed_output": {
+        "intent": "unclear"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0125",
+      "raw_text": "{\n  \"intent\": \"support_needed\"\n}",
+      "parsed_output": {
+        "intent": "support_needed"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0159",
+      "raw_text": "{\"intent\": \"unclear\"}",
+      "parsed_output": {
+        "intent": "unclear"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v3-0015",
+      "raw_text": "{\"intent\": \"resolved\"}",
+      "parsed_output": {
+        "intent": "resolved"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0239",
+      "raw_text": "{\"intent\": \"unclear\"}",
+      "parsed_output": {
+        "intent": "unclear"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0263",
+      "raw_text": "{\"intent\": \"no\"}",
+      "parsed_output": {
+        "intent": "no"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0282",
+      "raw_text": "{\"intent\": \"unclear\"}",
+      "parsed_output": {
+        "intent": "unclear"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0299",
+      "raw_text": "{\n  \"intent\": \"unclear\"\n}",
+      "parsed_output": {
+        "intent": "unclear"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0054",
+      "raw_text": "{\"focus_kind\": \"person\"}",
+      "parsed_output": {
+        "focus_kind": "person"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0056",
+      "raw_text": "{\"focus_kind\": \"group\"}",
+      "parsed_output": {
+        "focus_kind": "group"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-v2-0021",
+      "raw_text": "{\"focus_kind\": \"group\"}",
+      "parsed_output": {
+        "focus_kind": "group"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0029",
+      "raw_text": "{\"focus_kind\": \"person\"}",
+      "parsed_output": {
+        "focus_kind": "person"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0030",
+      "raw_text": "{\"focus_kind\": \"dieser moment\"}",
+      "parsed_output": {
+        "focus_kind": "dieser moment"
+      },
+      "schema_valid": false,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": "'dieser moment' is not one of ['person', 'group', 'other', 'unknown']\n\nFailed validating 'enum' in schema['properties']['focus_kind']:\n    {'type': 'string', 'enum': ['person', 'group', 'other', 'unknown']}\n\nOn instance['focus_kind']:\n    'dieser moment'"
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-v2-0009",
+      "raw_text": "{\"focus_kind\": \"group\"}",
+      "parsed_output": {
+        "focus_kind": "group"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0025",
+      "raw_text": "{\"focus_kind\": \"group\"}",
+      "parsed_output": {
+        "focus_kind": "group"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0047",
+      "raw_text": "{\"focus_kind\": \"group\"}",
+      "parsed_output": {
+        "focus_kind": "group"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0039",
+      "raw_text": "{\"focus_kind\": \"person\"}",
+      "parsed_output": {
+        "focus_kind": "person"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0040",
+      "raw_text": "{\"focus_kind\": \"person\"}",
+      "parsed_output": {
+        "focus_kind": "person"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-v2-0017",
+      "raw_text": "{\"focus_kind\": \"person\"}",
+      "parsed_output": {
+        "focus_kind": "person"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    }
+  ]
+}

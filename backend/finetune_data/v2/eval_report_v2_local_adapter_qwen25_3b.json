@@ -1,0 +1,173 @@
+{
+  "provider": "local_adapter",
+  "model": null,
+  "adapter_dir": "C:\\Projekte\\test_app\\backend\\finetune_data\\v2\\local_router\\artifacts\\router_qlora_qwen25_3b",
+  "base_model": null,
+  "dataset_version": "v2",
+  "datasets": [
+    "routing",
+    "slot_extraction"
+  ],
+  "limit": null,
+  "metrics": [
+    {
+      "dataset": "routing",
+      "total": 73,
+      "json_parse_success": 73,
+      "schema_valid": 72,
+      "exact_match": 28,
+      "average_text_similarity": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "total": 16,
+      "json_parse_success": 16,
+      "schema_valid": 16,
+      "exact_match": 8,
+      "average_text_similarity": null
+    }
+  ],
+  "failure_count": 53,
+  "failures": [
+    {
+      "dataset": "routing",
+      "example_id": "routing-0002",
+      "raw_text": "{\"intent\": \"first_time\", \"action\": \"transition\", \"next_node\": \"dark_first_time_branch\"}",
+      "parsed_output": {
+        "intent": "first_time",
+        "action": "transition",
+        "next_node": "dark_first_time_branch"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0001",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"dark_scene_feeling_intensity\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "dark_scene_feeling_intensity"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0033",
+      "raw_text": "{\"intent\": \"reaction\", \"action\": \"support\", \"next_node\": \"dark_scene_happening\"}",
+      "parsed_output": {
+        "intent": "reaction",
+        "action": "support",
+        "next_node": "dark_scene_happening"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0039",
+      "raw_text": "{\"intent\": \"druck\", \"action\": \"transition\", \"next_node\": \"dark_scene_immediate_feeling_followup\"}",
+      "parsed_output": {
+        "intent": "druck",
+        "action": "transition",
+        "next_node": "dark_scene_immediate_feeling_followup"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0045",
+      "raw_text": "{\"intent\": \"see_people\", \"action\": \"transition\", \"next_node\": \"dark_scene_people_seen\"}",
+      "parsed_output": {
+        "intent": "see_people",
+        "action": "transition",
+        "next_node": "dark_scene_people_seen"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0060",
+      "raw_text": "{\"intent\": \"abort\", \"action\": \"abort\", \"next_node\": \"abort_confirmation\"}",
+      "parsed_output": {
+        "intent": "abort",
+        "action": "abort",
+        "next_node": "abort_confirmation"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0005",
+      "raw_text": "{\"intent\": \"hear\", \"action\": \"transition\", \"next_node\": \"sound_scene_perception\"}",
+      "parsed_output": {
+        "intent": "hear",
+        "action": "transition",
+        "next_node": "sound_scene_perception"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0006",
+      "raw_text": "{\"intent\": \"see\", \"action\": \"transition\", \"next_node\": \"dark_scene_person_seen\"}",
+      "parsed_output": {
+        "intent": "see",
+        "action": "transition",
+        "next_node": "dark_scene_person_seen"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0004",
+      "raw_text": "{\"intent\": \"smell\", \"action\": \"transition\", \"next_node\": \"smell_scene_perception\"}",
+      "parsed_output": {
+        "intent": "smell",
+        "action": "transition",
+        "next_node": "smell_scene_perception"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0081",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"dark_scene_who\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "dark_scene_who"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    }
+  ]
+}

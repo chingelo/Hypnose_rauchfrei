@@ -1,0 +1,218 @@
+{
+  "model": "ft:gpt-3.5-turbo-1106:personal::AzSLcCUs",
+  "sample_plan": {
+    "routing": 20,
+    "slot_extraction": 10
+  },
+  "results": {
+    "routing": {
+      "sample_size": 20,
+      "json_parse_success": 20,
+      "schema_valid": 19,
+      "exact_match": 0,
+      "exact_rate": 0.0,
+      "failures": [
+        {
+          "id": "routing-0002",
+          "input": {
+            "node_id": "dark_known_branch",
+            "question_text": "Danke. Spuere jetzt kurz nach: Kennst du dieses Gefuehl bereits aus frueheren Momenten in deinem Leben, oder ist es hier zum ersten Mal da?",
+            "runtime_slots": {
+              "named_person": "Peter",
+              "trigger_focus_ref": "die menschen wo rauchen",
+              "group_person_trigger_reason": "gruppendruck",
+              "group_person_trigger_role": "von allen"
+            },
+            "session_hint": "",
+            "user_reply": "zum ersten Mal"
+          },
+          "expected": {
+            "intent": "new",
+            "action": "transition",
+            "next_node": "dark_origin_terminal"
+          },
+          "actual": {
+            "intent": "transition",
+            "action": "transition",
+            "next_node": "dark_unknown_branch"
+          }
+        },
+        {
+          "id": "routing-0022",
+          "input": {
+            "node_id": "dark_scene_feeling_intensity",
+            "question_text": "Wie nimmst du dort jetzt dein ungutes Gefuehl wahr, und wie stark ist es dort gerade?",
+            "runtime_slots": {
+              "named_person": "Peter",
+              "trigger_focus_ref": "die menschen wo rauchen",
+              "group_person_trigger_reason": "gruppendruck",
+              "group_person_trigger_role": "von allen"
+            },
+            "session_hint": "Hier geht es nur darum, wie das ungute Gefuehl dort wahrgenommen wird und wie stark es gerade ist.",
+            "user_reply": "banane"
+          },
+          "expected": {
+            "intent": "unclear",
+            "action": "clarify",
+            "next_node": "dark_scene_feeling_intensity"
+          },
+          "actual": {
+            "intent": "clarify",
+            "action": "clarify",
+            "next_node": "dark_scene_feeling_intensity"
+          }
+        },
+        {
+          "id": "routing-0039",
+          "input": {
+            "node_id": "dark_scene_immediate_feeling",
+            "question_text": "Was fuehlst du dort ganz unmittelbar?",
+            "runtime_slots": {
+              "named_person": "Peter",
+              "trigger_focus_ref": "die menschen wo rauchen",
+              "group_person_trigger_reason": "gruppendruck",
+              "group_person_trigger_role": "von allen"
+            },
+            "session_hint": "Hier geht es nur darum, was in dieser Ursprungsszene ganz unmittelbar gefuehlt wird.",
+            "user_reply": "Druck"
+          },
+          "expected": {
+            "intent": "ready",
+            "action": "transition",
+            "next_node": "dark_known_branch"
+          },
+          "actual": {
+            "intent": "transition",
+            "action": "transition",
+            "next_node": "dark_scene_feeling_reason"
+          }
+        },
+        {
+          "id": "routing-0045",
+          "input": {
+            "node_id": "dark_scene_mode_clarify",
+            "question_text": "Okay, was kannst du wahrnehmen? Siehst du jemand oder hoerst du was?",
+            "runtime_slots": {
+              "named_person": "Peter",
+              "trigger_focus_ref": "die menschen wo rauchen",
+              "group_person_trigger_reason": "gruppendruck",
+              "group_person_trigger_role": "von allen"
+            },
+            "session_hint": "Hier geht es nur darum, ob in dieser dunkleren Ursprungsszene eher etwas gesehen oder eher etwas gehoert wird.",
+            "user_reply": "ich sehe eine Gruppe auf dem Schulhof"
+          },
+          "expected": {
+            "intent": "visual",
+            "action": "transition",
+            "next_node": "dark_scene_who"
+          },
+          "actual": {
+            "intent": "clarify",
+            "action": "clarify",
+            "next_node": "dark_scene_mode_clarify"
+          }
+        },
+        {
+          "id": "routing-v2-0005",
+          "input": {
+            "node_id": "dark_scene_perception",
+            "question_text": "Und was nimmst du dort sonst noch wahr, siehst du oder hoerst du was?",
+            "runtime_slots": {
+              "named_person": "Peter",
+              "trigger_focus_ref": "die menschen wo rauchen",
+              "group_person_trigger_reason": "gruppendruck",
+              "group_person_trigger_role": "von allen"
+            },
+            "session_hint": "",
+            "user_reply": "ich hoer wie die lachen"
+          },
+          "expected": {
+            "intent": "audio",
+            "action": "transition",
+            "next_node": "dark_scene_audio_detail"
+          },
+          "actual": {
+            "intent": "transition",
+            "action": "answer_question",
+            "next_node": "dark_scene_perception"
+          }
+        }
+      ]
+    },
+    "slot_extraction": {
+      "sample_size": 10,
+      "json_parse_success": 10,
+      "schema_valid": 10,
+      "exact_match": 0,
+      "exact_rate": 0.0,
+      "failures": [
+        {
+          "id": "slot-0054",
+          "input": {
+            "trigger_focus_ref": "die clique auf dem pausenhof"
+          },
+          "expected": {
+            "display_trigger_focus_ref": "diese Gruppe"
+          },
+          "actual": {
+            "focus_kind": "group",
+            "display_trigger_focus_ref": "die clique auf dem pausenhof"
+          }
+        },
+        {
+          "id": "slot-0056",
+          "input": {
+            "trigger_focus_ref": "ich glaube es sind die freunde"
+          },
+          "expected": {
+            "display_trigger_focus_ref": "diese Gruppe"
+          },
+          "actual": {
+            "focus_kind": "person",
+            "named_person": null,
+            "display_trigger_focus_ref": "ich glaube es sind die freunde"
+          }
+        },
+        {
+          "id": "slot-v2-0021",
+          "input": {
+            "trigger_focus_ref": "die anderen da hinten"
+          },
+          "expected": {
+            "display_trigger_focus_ref": "diese Gruppe"
+          },
+          "actual": {
+            "focus_kind": "group",
+            "named_person": null,
+            "display_trigger_focus_ref": "die anderen da hinten"
+          }
+        },
+        {
+          "id": "slot-0029",
+          "input": {
+            "user_reply": "die situation auf dem schulhof"
+          },
+          "expected": {
+            "focus_kind": "other"
+          },
+          "actual": {
+            "focus_kind": "other",
+            "display_trigger_focus_ref": "die situation auf dem schulhof"
+          }
+        },
+        {
+          "id": "slot-0030",
+          "input": {
+            "user_reply": "dieser moment"
+          },
+          "expected": {
+            "focus_kind": "other"
+          },
+          "actual": {
+            "display_trigger_focus_ref": "dieser moment"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "focus_instruction": "Wichtig ist, den Blick in der Mitte des Bildes zu halten, den Kopf nicht zu bewegen und nur mit den Augen dem Punkt zu folgen.",
+  "activation_segments": [
+    "Ich bitte Dich jetzt, kurz Deine Augen zu schließen.",
+    "Geh innerlich in das Gefühl, das Du verändern möchtest.",
+    "Stell Dir eine typische Situation vor, in der dieses Gefühl entsteht.",
+    "Sei wirklich darin, so als würde es jetzt gerade passieren.",
+    "Ich bitte Dich jetzt, Dich vollkommen in diese Situation hineinzuversetzen, so dass Du das Gefühl direkt erlebst.",
+    "Und jetzt lass dieses Gefühl ganz bewusst stärker werden, bis zu dem Punkt, an dem es am intensivsten ist.",
+    "Du kannst Dir dabei vorstellen, dass Du an einem inneren Regler drehst, wie bei einem Radio, und die Intensität immer weiter erhöhst.",
+    "Lass es stärker und stärker werden."
+  ],
+  "activation_confirm_prompt": "Hast Du es? Bitte bestätige kurz mit Ja oder Nein.",
+  "activation_confirm_retry": "Ich habe Deine Antwort nicht klar verstanden. Bitte antworte nur mit Ja oder Nein.",
+  "activation_continue_after_yes": "Gut. Genau diesen Zustand braucht Dein Gehirn jetzt, um dieses Gefühl zu verarbeiten.",
+  "activation_scale_segments": [
+    "Jetzt stell Dir bitte eine Skala von 1 bis 10 vor.",
+    "1 bedeutet: Genau so, wie Du Dich fühlen möchtest, ruhig, frei und angenehm.",
+    "10 bedeutet: Das Gefühl ist so stark, dass es kaum auszuhalten ist.",
+    "Spür jetzt in Dich hinein."
+  ],
+  "activation_scale_prompt": "Wo liegst Du gerade auf dieser Skala? Nenn mir bitte eine Zahl von 1 bis 10.",
+  "activation_scale_retry": "Ich habe noch keine klare Zahl verstanden. Bitte nenn mir eine Zahl von 1 bis 10.",
+  "activation_done": "Gut. Dann öffne jetzt wieder Deine Augen. Wir starten jetzt mit der ersten Runde.",
+  "round_complete_instruction": "Die komplette Runde ist beendet. Schließe kurz die Augen, atme einmal ruhig ein und wieder aus.",
+  "round_scale_prompt": "Wo liegst Du jetzt auf der Skala? Nenn mir bitte eine Zahl von 1 bis 10.",
+  "round_scale_retry": "Ich habe noch keine klare Zahl verstanden. Bitte nenn mir eine Zahl von 1 bis 10."
+}

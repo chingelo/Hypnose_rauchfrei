@@ -1,0 +1,9 @@
+{
+  "allowed_scripts": [
+    "run_session_validation_matrix.py"
+  ],
+  "approved_by": "manual",
+  "reason": "Kurzbeschreibung des bewusst freigegebenen Live-Laufs",
+  "max_calls": 25,
+  "expires_at": "2026-04-10T18:00:00+02:00"
+}

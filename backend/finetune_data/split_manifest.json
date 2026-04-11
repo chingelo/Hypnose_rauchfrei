@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "generated_from": "gold_datasets_v1",
+  "files": {
+    "routing_train.jsonl": 336,
+    "routing_eval.jsonl": 67,
+    "slot_extraction_train.jsonl": 47,
+    "slot_extraction_eval.jsonl": 12,
+    "clarification_train.jsonl": 236,
+    "clarification_eval.jsonl": 59,
+    "support_abort_train.jsonl": 98,
+    "support_abort_eval.jsonl": 27
+  }
+}

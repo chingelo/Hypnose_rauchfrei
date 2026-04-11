@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RoutingModelOutput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intent",
+    "action",
+    "next_node"
+  ],
+  "properties": {
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "transition",
+        "clarify",
+        "repeat",
+        "answer_question",
+        "support",
+        "abort"
+      ]
+    },
+    "next_node": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

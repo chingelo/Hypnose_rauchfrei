@@ -1,0 +1,12 @@
+{"id": "slot-0054", "task": "display_trigger_focus_ref", "source": ["run_session_sandbox", "runtime_rendering"], "input": {"trigger_focus_ref": "die clique auf dem pausenhof"}, "output": {"display_trigger_focus_ref": "diese Gruppe"}}
+{"id": "slot-0029", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die situation auf dem schulhof"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0030", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "dieser moment"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0018", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "alle anderen"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0019", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "mehrere jungs aus der klasse"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0034", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die pause auf dem schulhof"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0020", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "die leute in der raucherecke"}, "output": {"focus_kind": "group"}}
+{"id": "slot-0025", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "der rauch"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0031", "task": "focus_kind", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "das lachen"}, "output": {"focus_kind": "other"}}
+{"id": "slot-0047", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "meine freunde"}, "output": {"named_person": null}}
+{"id": "slot-0039", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "peter"}, "output": {"named_person": "Peter"}}
+{"id": "slot-0040", "task": "named_person_label", "source": ["run_session_sandbox", "test_matrix"], "input": {"user_reply": "paul"}, "output": {"named_person": "Paul"}}

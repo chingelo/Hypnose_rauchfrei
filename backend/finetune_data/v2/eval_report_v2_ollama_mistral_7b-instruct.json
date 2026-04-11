@@ -1,0 +1,142 @@
+{
+  "provider": "ollama",
+  "model": "mistral:7b-instruct",
+  "dataset_version": "v2",
+  "datasets": [
+    "routing",
+    "slot_extraction"
+  ],
+  "limit": 5,
+  "metrics": [
+    {
+      "dataset": "routing",
+      "total": 5,
+      "json_parse_success": 5,
+      "schema_valid": 5,
+      "exact_match": 2,
+      "average_text_similarity": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "total": 5,
+      "json_parse_success": 5,
+      "schema_valid": 5,
+      "exact_match": 0,
+      "average_text_similarity": null
+    }
+  ],
+  "failure_count": 8,
+  "failures": [
+    {
+      "dataset": "routing",
+      "example_id": "routing-0002",
+      "raw_text": "{\"intent\": \"answer_question\",\n\"action\": \"transition\",\n\"next_node\": \"new_experience\"}",
+      "parsed_output": {
+        "intent": "answer_question",
+        "action": "transition",
+        "next_node": "new_experience"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0022",
+      "raw_text": "{\"intent\": \"clarify\", \"action\": \"answer_question\", \"next_node\": \"dark_scene_feelings_clarification\"}",
+      "parsed_output": {
+        "intent": "clarify",
+        "action": "answer_question",
+        "next_node": "dark_scene_feelings_clarification"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0001",
+      "raw_text": "{\"intent\": \"clarify\", \"action\": \"answer_question\", \"next_node\": \"dark_scene_feelings_clarification\"}",
+      "parsed_output": {
+        "intent": "clarify",
+        "action": "answer_question",
+        "next_node": "dark_scene_feelings_clarification"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0054",
+      "raw_text": "{\n  \"focus_kind\": \"other\",\n  \"named_person\": null,\n  \"display_trigger_focus_ref\": \"the click on the courtyard\"\n}",
+      "parsed_output": {
+        "focus_kind": "other",
+        "named_person": null,
+        "display_trigger_focus_ref": "the click on the courtyard"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0056",
+      "raw_text": "{\n  \"focus_kind\": \"group\",\n  \"named_person\": null,\n  \"display_trigger_focus_ref\": \"ich glaube es sind die freunde\"\n}",
+      "parsed_output": {
+        "focus_kind": "group",
+        "named_person": null,
+        "display_trigger_focus_ref": "ich glaube es sind die freunde"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0029",
+      "raw_text": "{\n  \"focus_kind\": \"other\",\n  \"display_trigger_focus_ref\": \"schoolyard\"\n}",
+      "parsed_output": {
+        "focus_kind": "other",
+        "display_trigger_focus_ref": "schoolyard"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0030",
+      "raw_text": "{\n  \"focus_kind\": \"unknown\",\n  \"named_person\": null,\n  \"display_trigger_focus_ref\": \"dieser moment\"\n}",
+      "parsed_output": {
+        "focus_kind": "unknown",
+        "named_person": null,
+        "display_trigger_focus_ref": "dieser moment"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-v2-0009",
+      "raw_text": "{\n  \"focus_kind\": \"other\",\n  \"named_person\": null,\n  \"display_trigger_focus_ref\": \"der gestank\"\n}",
+      "parsed_output": {
+        "focus_kind": "other",
+        "named_person": null,
+        "display_trigger_focus_ref": "der gestank"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    }
+  ]
+}

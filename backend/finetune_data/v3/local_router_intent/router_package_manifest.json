@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "package": "local_router_intent",
+  "dataset_version": "v3",
+  "routing_mode": "intent_only",
+  "counts": {
+    "router_sft_train.jsonl": 456,
+    "router_sft_eval.jsonl": 99,
+    "routing_train_only.jsonl": 381,
+    "routing_eval_only.jsonl": 81,
+    "slot_train_only.jsonl": 75,
+    "slot_eval_only.jsonl": 18
+  },
+  "schemas": {
+    "routing": "C:\\Projekte\\test_app\\backend\\finetune_data\\v3\\local_router_intent\\routing_intent_output.schema.json",
+    "slot_extraction": "C:\\Projekte\\test_app\\backend\\finetune_data\\schemas\\slot_extraction_output.schema.json"
+  },
+  "scope": [
+    "routing",
+    "slot_extraction"
+  ],
+  "excluded_scope": [
+    "clarification",
+    "support_abort"
+  ],
+  "reasoning": "Die lokale Modellvorbereitung konzentriert sich nur auf strukturierte Entscheidungen. Antworttexte fuer Clarification und Support bleiben deterministisch, damit die Laufzeit auch ohne Modell stabil bleibt."
+}

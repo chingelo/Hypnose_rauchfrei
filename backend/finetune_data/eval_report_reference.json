@@ -1,0 +1,47 @@
+{
+  "provider": "reference",
+  "model": null,
+  "datasets": [
+    "routing",
+    "slot_extraction",
+    "clarification",
+    "support_abort"
+  ],
+  "limit": null,
+  "metrics": [
+    {
+      "dataset": "routing",
+      "total": 67,
+      "json_parse_success": 67,
+      "schema_valid": 67,
+      "exact_match": 67,
+      "average_text_similarity": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "total": 12,
+      "json_parse_success": 12,
+      "schema_valid": 12,
+      "exact_match": 12,
+      "average_text_similarity": null
+    },
+    {
+      "dataset": "clarification",
+      "total": 59,
+      "json_parse_success": 59,
+      "schema_valid": 59,
+      "exact_match": 59,
+      "average_text_similarity": 1.0
+    },
+    {
+      "dataset": "support_abort",
+      "total": 27,
+      "json_parse_success": 27,
+      "schema_valid": 27,
+      "exact_match": 27,
+      "average_text_similarity": 1.0
+    }
+  ],
+  "failure_count": 0,
+  "failures": []
+}

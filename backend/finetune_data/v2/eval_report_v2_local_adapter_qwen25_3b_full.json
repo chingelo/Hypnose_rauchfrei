@@ -1,0 +1,759 @@
+{
+  "provider": "local_adapter",
+  "model": null,
+  "adapter_dir": "C:\\Projekte\\test_app\\backend\\finetune_data\\v2\\local_router\\artifacts\\router_qlora_qwen25_3b",
+  "base_model": null,
+  "dataset_version": "v2",
+  "datasets": [
+    "routing",
+    "slot_extraction"
+  ],
+  "limit": null,
+  "metrics": [
+    {
+      "dataset": "routing",
+      "total": 73,
+      "json_parse_success": 73,
+      "schema_valid": 72,
+      "exact_match": 28,
+      "average_text_similarity": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "total": 16,
+      "json_parse_success": 16,
+      "schema_valid": 16,
+      "exact_match": 8,
+      "average_text_similarity": null
+    }
+  ],
+  "failure_count": 53,
+  "failures": [
+    {
+      "dataset": "routing",
+      "example_id": "routing-0002",
+      "raw_text": "{\"intent\": \"first_time\", \"action\": \"transition\", \"next_node\": \"dark_first_time_branch\"}",
+      "parsed_output": {
+        "intent": "first_time",
+        "action": "transition",
+        "next_node": "dark_first_time_branch"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0001",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"dark_scene_feeling_intensity\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "dark_scene_feeling_intensity"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0033",
+      "raw_text": "{\"intent\": \"reaction\", \"action\": \"support\", \"next_node\": \"dark_scene_happening\"}",
+      "parsed_output": {
+        "intent": "reaction",
+        "action": "support",
+        "next_node": "dark_scene_happening"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0039",
+      "raw_text": "{\"intent\": \"druck\", \"action\": \"transition\", \"next_node\": \"dark_scene_immediate_feeling_followup\"}",
+      "parsed_output": {
+        "intent": "druck",
+        "action": "transition",
+        "next_node": "dark_scene_immediate_feeling_followup"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0045",
+      "raw_text": "{\"intent\": \"see_people\", \"action\": \"transition\", \"next_node\": \"dark_scene_people_seen\"}",
+      "parsed_output": {
+        "intent": "see_people",
+        "action": "transition",
+        "next_node": "dark_scene_people_seen"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0060",
+      "raw_text": "{\"intent\": \"abort\", \"action\": \"abort\", \"next_node\": \"abort_confirmation\"}",
+      "parsed_output": {
+        "intent": "abort",
+        "action": "abort",
+        "next_node": "abort_confirmation"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0005",
+      "raw_text": "{\"intent\": \"hear\", \"action\": \"transition\", \"next_node\": \"sound_scene_perception\"}",
+      "parsed_output": {
+        "intent": "hear",
+        "action": "transition",
+        "next_node": "sound_scene_perception"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0006",
+      "raw_text": "{\"intent\": \"see\", \"action\": \"transition\", \"next_node\": \"dark_scene_person_seen\"}",
+      "parsed_output": {
+        "intent": "see",
+        "action": "transition",
+        "next_node": "dark_scene_person_seen"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0004",
+      "raw_text": "{\"intent\": \"smell\", \"action\": \"transition\", \"next_node\": \"smell_scene_perception\"}",
+      "parsed_output": {
+        "intent": "smell",
+        "action": "transition",
+        "next_node": "smell_scene_perception"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0081",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"dark_scene_who\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "dark_scene_who"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0089",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"group_image_ready\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "group_image_ready"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0090",
+      "raw_text": "{\"intent\": \"clarify\", \"action\": \"clarify\", \"next_node\": \"group_multiple_people_name\"}",
+      "parsed_output": {
+        "intent": "clarify",
+        "action": "clarify",
+        "next_node": "group_multiple_people_name"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0096",
+      "raw_text": "{\"intent\": \"group_person\", \"action\": \"transition\", \"next_node\": \"group_person_intro\"}",
+      "parsed_output": {
+        "intent": "group_person",
+        "action": "transition",
+        "next_node": "group_person_intro"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0109",
+      "raw_text": "{\"intent\": \"group_person\", \"action\": \"transition\", \"next_node\": \"group_person_trigger_reason\"}",
+      "parsed_output": {
+        "intent": "group_person",
+        "action": "transition",
+        "next_node": "group_person_trigger_reason"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0116",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"group_person_ready\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "group_person_ready"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0024",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"group_person_trigger_core\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "group_person_trigger_core"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0128",
+      "raw_text": "{\"intent\": \"group_person_trigger\", \"action\": \"transition\", \"next_node\": \"group_person_trigger_reason\"}",
+      "parsed_output": {
+        "intent": "group_person_trigger",
+        "action": "transition",
+        "next_node": "group_person_trigger_reason"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0152",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"group_source_kind\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "group_source_kind"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0153",
+      "raw_text": "{\"intent\": \"support\", \"action\": \"support\", \"next_node\": \"group_source_kind\"}",
+      "parsed_output": {
+        "intent": "support",
+        "action": "support",
+        "next_node": "group_source_kind"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0159",
+      "raw_text": "{\"intent\": \"support\", \"action\": \"support\", \"next_node\": \"group_specific_person_name\"}",
+      "parsed_output": {
+        "intent": "support",
+        "action": "support",
+        "next_node": "group_specific_person_name"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0160",
+      "raw_text": "{\"intent\": \"support\", \"action\": \"support\", \"next_node\": \"group_whole_scope\"}",
+      "parsed_output": {
+        "intent": "support",
+        "action": "support",
+        "next_node": "group_whole_scope"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0021",
+      "raw_text": "{\"intent\": \"support\", \"action\": \"support\", \"next_node\": \"group_whole_scope\"}",
+      "parsed_output": {
+        "intent": "support",
+        "action": "support",
+        "next_node": "group_whole_scope"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0167",
+      "raw_text": "{\"intent\": \"positive\", \"action\": \"transition\", \"next_node\": \"hell_positive_followup\"}",
+      "parsed_output": {
+        "intent": "positive",
+        "action": "transition",
+        "next_node": "hell_positive_followup"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0177",
+      "raw_text": "{\"intent\": \"unknown\", \"action\": \"unknown\", \"next_node\": \"hell_hypnose_wait\"}",
+      "parsed_output": {
+        "intent": "unknown",
+        "action": "unknown",
+        "next_node": "hell_hypnose_wait"
+      },
+      "schema_valid": false,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": "'unknown' is not one of ['transition', 'clarify', 'repeat', 'answer_question', 'support', 'abort']\n\nFailed validating 'enum' in schema['properties']['action']:\n    {'type': 'string',\n     'enum': ['transition',\n              'clarify',\n              'repeat',\n              'answer_question',\n              'support',\n              'abort']}\n\nOn instance['action']:\n    'unknown'"
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0175",
+      "raw_text": "{\"intent\": \"transition\", \"action\": \"transition\", \"next_node\": \"hell_hypnose_transition\"}",
+      "parsed_output": {
+        "intent": "transition",
+        "action": "transition",
+        "next_node": "hell_hypnose_transition"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0184",
+      "raw_text": "{\"intent\": \"both\", \"action\": \"clarify\", \"next_node\": \"hell_light_level\"}",
+      "parsed_output": {
+        "intent": "both",
+        "action": "clarify",
+        "next_node": "hell_light_level"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0182",
+      "raw_text": "{\"intent\": \"light\", \"action\": \"transition\", \"next_node\": \"hell_light_description\"}",
+      "parsed_output": {
+        "intent": "light",
+        "action": "transition",
+        "next_node": "hell_light_description"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0198",
+      "raw_text": "{\"intent\": \"lighter\", \"action\": \"transition\", \"next_node\": \"hell_regulation_lighter\"}",
+      "parsed_output": {
+        "intent": "lighter",
+        "action": "transition",
+        "next_node": "hell_regulation_lighter"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0205",
+      "raw_text": "{\"intent\": \"clarify\", \"action\": \"clarify\", \"next_node\": \"origin_cause_owner\"}",
+      "parsed_output": {
+        "intent": "clarify",
+        "action": "clarify",
+        "next_node": "origin_cause_owner"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0219",
+      "raw_text": "{\"intent\": \"abort\", \"action\": \"abort\", \"next_node\": \"abort_confirmation\"}",
+      "parsed_output": {
+        "intent": "abort",
+        "action": "abort",
+        "next_node": "abort_confirmation"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0015",
+      "raw_text": "{\"intent\": \"group\", \"action\": \"transition\", \"next_node\": \"origin_other_group_member\"}",
+      "parsed_output": {
+        "intent": "group",
+        "action": "transition",
+        "next_node": "origin_other_group_member"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0239",
+      "raw_text": "{\"intent\": \"support\", \"action\": \"support\", \"next_node\": \"person_switch_hear_more\"}",
+      "parsed_output": {
+        "intent": "support",
+        "action": "support",
+        "next_node": "person_switch_hear_more"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0252",
+      "raw_text": "{\"intent\": \"need_info\", \"action\": \"clarify\", \"next_node\": \"person_switch_ready\"}",
+      "parsed_output": {
+        "intent": "need_info",
+        "action": "clarify",
+        "next_node": "person_switch_ready"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0254",
+      "raw_text": "{\"intent\": \"yes\", \"action\": \"transition\", \"next_node\": \"person_switch_meets_customer\"}",
+      "parsed_output": {
+        "intent": "yes",
+        "action": "transition",
+        "next_node": "person_switch_meets_customer"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0274",
+      "raw_text": "{\"intent\": \"support\", \"action\": \"support\", \"next_node\": \"person_switch_self_heard\"}",
+      "parsed_output": {
+        "intent": "support",
+        "action": "support",
+        "next_node": "person_switch_self_heard"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0275",
+      "raw_text": "{\"intent\": \"support\", \"action\": \"support\", \"next_node\": \"person_switch_self_understands\"}",
+      "parsed_output": {
+        "intent": "support",
+        "action": "support",
+        "next_node": "person_switch_self_understands"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0282",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"person_switch_why\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "person_switch_why"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0291",
+      "raw_text": "{\"intent\": \"abort\", \"action\": \"abort\", \"next_node\": \"abort_confirmation\"}",
+      "parsed_output": {
+        "intent": "abort",
+        "action": "abort",
+        "next_node": "abort_confirmation"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0299",
+      "raw_text": "{\"intent\": \"support\", \"action\": \"support\", \"next_node\": \"phase4_common_feel_after_aversion\"}",
+      "parsed_output": {
+        "intent": "support",
+        "action": "support",
+        "next_node": "phase4_common_feel_after_aversion"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0313",
+      "raw_text": "{\"intent\": \"understood\", \"action\": \"transition\", \"next_node\": \"phase4_common_understood_followup\"}",
+      "parsed_output": {
+        "intent": "understood",
+        "action": "transition",
+        "next_node": "phase4_common_understood_followup"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0328",
+      "raw_text": "{\"intent\": \"abort\", \"action\": \"abort\", \"next_node\": \"abort_confirmation\"}",
+      "parsed_output": {
+        "intent": "abort",
+        "action": "abort",
+        "next_node": "abort_confirmation"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-v2-0011",
+      "raw_text": "{\"intent\": \"clarify\", \"action\": \"clarify\", \"next_node\": \"scene_access_followup\"}",
+      "parsed_output": {
+        "intent": "clarify",
+        "action": "clarify",
+        "next_node": "scene_access_followup"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0365",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"session_phase2_feel_clear\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "session_phase2_feel_clear"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0378",
+      "raw_text": "{\"intent\": \"scale\", \"action\": \"transition\", \"next_node\": \"session_phase2_scale_after_followup\"}",
+      "parsed_output": {
+        "intent": "scale",
+        "action": "transition",
+        "next_node": "session_phase2_scale_after_followup"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "routing",
+      "example_id": "routing-0398",
+      "raw_text": "{\"intent\": \"unclear\", \"action\": \"clarify\", \"next_node\": \"session_phase2_scene_found\"}",
+      "parsed_output": {
+        "intent": "unclear",
+        "action": "clarify",
+        "next_node": "session_phase2_scene_found"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0054",
+      "raw_text": "{\"display_trigger_focus_ref\": \"die clique\"}",
+      "parsed_output": {
+        "display_trigger_focus_ref": "die clique"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0056",
+      "raw_text": "{\"display_trigger_focus_ref\": \"ich glaube es sind die freunde\"}",
+      "parsed_output": {
+        "display_trigger_focus_ref": "ich glaube es sind die freunde"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0018",
+      "raw_text": "{\"focus_kind\": \"other\"}",
+      "parsed_output": {
+        "focus_kind": "other"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0020",
+      "raw_text": "{\"focus_kind\": \"other\"}",
+      "parsed_output": {
+        "focus_kind": "other"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0047",
+      "raw_text": "{\"focus_kind\": \"group\"}",
+      "parsed_output": {
+        "focus_kind": "group"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0039",
+      "raw_text": "{\"named_person\": \"peter\"}",
+      "parsed_output": {
+        "named_person": "peter"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-0040",
+      "raw_text": "{\"named_person\": \"paul\"}",
+      "parsed_output": {
+        "named_person": "paul"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    },
+    {
+      "dataset": "slot_extraction",
+      "example_id": "slot-v2-0017",
+      "raw_text": "{\"focus_kind\": \"person\"}",
+      "parsed_output": {
+        "focus_kind": "person"
+      },
+      "schema_valid": true,
+      "exact_match": false,
+      "text_similarity": null,
+      "error": null
+    }
+  ]
+}

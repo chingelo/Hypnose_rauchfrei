@@ -1,0 +1,268 @@
+{
+  "version": 3,
+  "datasets": {
+    "routing": {
+      "v2_count": 428,
+      "edge_case_count_added": 34,
+      "duplicates_removed": 0,
+      "v3_count": 462,
+      "edge_labels": [
+        "known_branch_new_plain",
+        "known_branch_known_plain",
+        "immediate_feeling_pressure",
+        "immediate_feeling_shame",
+        "happening_ready_plain",
+        "perception_audio_canonical",
+        "perception_visual_canonical",
+        "perception_other_sense_canonical",
+        "dark_who_question_plain",
+        "dark_who_ready_group",
+        "mode_visual_people",
+        "mode_other_sense_smoke",
+        "hell_level_hell_plain",
+        "hell_level_dark_plain",
+        "hell_wait_resolving",
+        "hell_wait_more_time",
+        "hell_wait_resolved",
+        "group_multiple_name_ready",
+        "group_multiple_required_name_ready",
+        "group_person_ready_no_plain",
+        "group_person_reason_ready_plain",
+        "group_source_whole_group_plain",
+        "group_source_one_person_plain",
+        "group_source_multiple_plain",
+        "group_image_ready_question_plain",
+        "group_image_ready_support_plain",
+        "group_core_ready_short",
+        "origin_other_kind_laughter",
+        "origin_owner_self_plain",
+        "origin_owner_external_plain",
+        "scene_access_other_sense_taste",
+        "scene_access_visual_dark_plain",
+        "feeling_intensity_compound",
+        "feeling_intensity_scale_phrase"
+      ],
+      "top_node_counts_v3": [
+        [
+          "dark_scene_perception",
+          16
+        ],
+        [
+          "dark_scene_mode_clarify",
+          15
+        ],
+        [
+          "group_source_kind",
+          14
+        ],
+        [
+          "origin_other_target_kind",
+          13
+        ],
+        [
+          "scene_access_followup",
+          13
+        ],
+        [
+          "dark_scene_feeling_intensity",
+          11
+        ],
+        [
+          "hell_hypnose_wait",
+          11
+        ],
+        [
+          "origin_cause_owner",
+          11
+        ],
+        [
+          "hell_light_level",
+          10
+        ],
+        [
+          "dark_known_branch",
+          9
+        ],
+        [
+          "dark_scene_immediate_feeling",
+          9
+        ],
+        [
+          "group_image_ready",
+          9
+        ],
+        [
+          "group_person_trigger_core",
+          9
+        ],
+        [
+          "group_whole_scope",
+          9
+        ],
+        [
+          "dark_scene_who",
+          8
+        ]
+      ],
+      "v2_reference": {
+        "v1_count": 403,
+        "edge_case_count_added": 25,
+        "duplicates_removed": 0,
+        "v2_count": 428,
+        "synthetic_marker_counts_v1": {
+          "placeholder_banane": 59,
+          "generic_repeat": 59,
+          "generic_question": 59,
+          "generic_support": 59,
+          "generic_abort": 59
+        },
+        "edge_labels": [
+          "dark_feeling_typo_pressure",
+          "dark_feeling_scale_only",
+          "dark_immediate_pressure_phrase",
+          "dark_perception_smell",
+          "dark_perception_audio_colloquial",
+          "dark_perception_visual_person",
+          "dark_mode_smell_only",
+          "dark_mode_audio_only",
+          "dark_mode_nothing_colloquial",
+          "scene_access_smell",
+          "scene_access_visual_dark",
+          "origin_owner_external_colloquial",
+          "origin_owner_internal_colloquial",
+          "origin_kind_person_brother",
+          "origin_kind_group_smoking_clique",
+          "origin_kind_other_smoke_smell",
+          "origin_kind_other_color",
+          "group_source_whole_colloquial",
+          "group_source_one_person_colloquial",
+          "group_source_multiple_colloquial",
+          "group_scope_representative_colloquial",
+          "group_scope_multiple_colloquial",
+          "group_core_real_explanation",
+          "group_core_incomplete_but_meaningful",
+          "person_switch_why_belonging"
+        ],
+        "top_node_counts_v2": [
+          [
+            "dark_scene_mode_clarify",
+            13
+          ],
+          [
+            "dark_scene_perception",
+            13
+          ],
+          [
+            "origin_other_target_kind",
+            12
+          ],
+          [
+            "group_source_kind",
+            11
+          ],
+          [
+            "scene_access_followup",
+            11
+          ],
+          [
+            "dark_scene_feeling_intensity",
+            9
+          ],
+          [
+            "group_whole_scope",
+            9
+          ],
+          [
+            "origin_cause_owner",
+            9
+          ],
+          [
+            "group_person_trigger_core",
+            8
+          ],
+          [
+            "hell_hypnose_wait",
+            8
+          ],
+          [
+            "hell_light_level",
+            8
+          ],
+          [
+            "hell_regulation_choice",
+            8
+          ],
+          [
+            "dark_known_branch",
+            7
+          ],
+          [
+            "dark_scene_immediate_feeling",
+            7
+          ],
+          [
+            "group_image_ready",
+            7
+          ]
+        ]
+      }
+    },
+    "slot_extraction": {
+      "v2_count": 84,
+      "edge_case_count_added": 13,
+      "duplicates_removed": 4,
+      "v3_count": 93,
+      "task_counts_v3": {
+        "focus_kind": 56,
+        "named_person_label": 22,
+        "display_trigger_focus_ref": 15
+      },
+      "helper_alignment_total": 13,
+      "helper_alignment_mismatches": 2,
+      "helper_alignment_examples": [
+        {
+          "task": "focus_kind",
+          "input": "das auslachen",
+          "expected": {
+            "focus_kind": "other"
+          },
+          "current_helper_output": {
+            "focus_kind": "unknown"
+          },
+          "matches_current_helper": false
+        },
+        {
+          "task": "display_trigger_focus_ref",
+          "input": "peter",
+          "expected": {
+            "display_trigger_focus_ref": "Peter"
+          },
+          "current_helper_output": {
+            "display_trigger_focus_ref": "peter"
+          },
+          "matches_current_helper": false
+        }
+      ],
+      "v2_reference": {
+        "v1_count": 59,
+        "edge_case_count_added": 25,
+        "duplicates_removed": 0,
+        "v2_count": 84,
+        "task_counts_v2": {
+          "focus_kind": 52,
+          "named_person_label": 20,
+          "display_trigger_focus_ref": 12
+        },
+        "helper_alignment_total": 25,
+        "helper_alignment_mismatches": 0,
+        "helper_alignment_examples": []
+      }
+    }
+  },
+  "split_counts": {
+    "routing_train_v3.jsonl": 381,
+    "routing_eval_v3.jsonl": 81,
+    "slot_extraction_train_v3.jsonl": 75,
+    "slot_extraction_eval_v3.jsonl": 18
+  }
+}
